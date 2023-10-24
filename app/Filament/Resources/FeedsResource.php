@@ -89,9 +89,11 @@ class FeedsResource extends Resource
                     ->badge()
                     ->numeric(),
                 Tables\Columns\TextColumn::make('bought_price')
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
                 Tables\Columns\TextColumn::make('selling_price')
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
                 Tables\Columns\TextColumn::make('updated_at')->date()
             ])
             ->defaultSort('updated_at', 'desc')

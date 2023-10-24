@@ -171,17 +171,20 @@ class SalesResource extends Resource
                 Tables\Columns\TextColumn::make('feeds_name'),
                 Tables\Columns\TextColumn::make('feeds_type'),
                 Tables\Columns\TextColumn::make('feeds_price')
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
                 Tables\Columns\TextColumn::make('quantity')
                     ->numeric()
                     ->alignCenter(),
                 Tables\Columns\TextColumn::make('total')
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
                 // ->summarize([
                 //     Tables\Columns\Summarizers\Sum::make()->money('PHP')
                 // ]),
                 Tables\Columns\TextColumn::make('paid_price')
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
                 // ->summarize([
                 //     Tables\Columns\Summarizers\Sum::make()->money('PHP')
                 // ]),
@@ -195,7 +198,8 @@ class SalesResource extends Resource
                     ->badge(),
                 Tables\Columns\TextColumn::make('profit')
                     ->toggledHiddenByDefault()
-                    ->currency('PHP'),
+                    ->prefix('₱')
+                    ->numeric(2),
             ])
             ->defaultSort('updated_at', 'desc')
             ->filters([
